@@ -4,7 +4,6 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" /> -->
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.x/dist/vuetify.min.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 
@@ -12,6 +11,9 @@
   <meta name="description" content="Objednajte si jedlo jednoducho online." />
 
   <link href="https://piknik.cc/favicon.ico" type="image/x-icon" rel="icon" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#007bff" />
 
   <link href="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/css/app.css" rel="stylesheet" />
 
@@ -56,8 +58,7 @@
                   <v-col class="text-left white--text mr-8">
                     <span class="overline font-weight-bold">Kontakt</span>
                     <p class="body-2">
-                      <a href="mailto:demo@piknik.cc"
-                        class="text-decoration-none white--text">demo@piknik.cc</a><br />
+                      <a href="mailto:demo@piknik.cc" class="text-decoration-none white--text">demo@piknik.cc</a><br />
                       <a href="tel:+421 XXX XXX XXX" class="text-decoration-none white--text">+421 XXX XXX XXX</a><br>
 
                     </p>
@@ -133,6 +134,16 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/gh/sjasik/embeddable.piknik.cc@latest/js/app.js"></script>
+
+  <script>
+    window.onload = () => {
+      "use strict";
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    };
+  </script>
 
   <style>
     /* Selection */
